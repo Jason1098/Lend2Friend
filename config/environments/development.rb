@@ -34,4 +34,8 @@ Lend2friend::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  # devise requirements
+  config.action_mailer.default_url_ouptions = { :host => 'localhost:3000' }
+  
 end
