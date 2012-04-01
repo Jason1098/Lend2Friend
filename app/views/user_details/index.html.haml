@@ -1,0 +1,35 @@
+%h1 Listing user_details
+
+%table
+  %tr
+    %th User
+    %th Address list id
+    %th Phone list
+    %th First name
+    %th Middle name
+    %th Last name
+    %th Alt email
+    %th Social
+    %th Dob
+    %th
+    %th
+    %th
+
+  - @user_details.each do |user_detail|
+    %tr
+      %td= user_detail.user_id
+      %td= user_detail.address_list_id
+      %td= user_detail.phone_list_id
+      %td= user_detail.first_name
+      %td= user_detail.middle_name
+      %td= user_detail.last_name
+      %td= user_detail.alt_email
+      %td= user_detail.social
+      %td= user_detail.dob
+      %td= link_to 'Show', user_detail
+      %td= link_to 'Edit', edit_user_detail_path(user_detail)
+      %td= link_to 'Destroy', user_detail, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New User detail', new_user_detail_path
