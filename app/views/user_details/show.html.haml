@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @user_detail.user_id
+%p
+  %b Address list it:
+  = @user_detail.address_list_id
+%p
+  %b Phone list:
+  = @user_detail.phone_list_id
+%p
+  %b First name:
+  = @user_detail.first_name
+%p
+  %b Middle name:
+  = @user_detail.middle_name
+%p
+  %b Last name:
+  = @user_detail.last_name
+%p
+  %b Alt email:
+  = @user_detail.alt_email
+%p
+  %b Social:
+  = @user_detail.social
+%p
+  %b Dob:
+  = @user_detail.dob
+
+= link_to 'Edit', edit_user_detail_path(@user_detail)
+\|
+= link_to 'Back', user_details_path

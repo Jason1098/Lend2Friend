@@ -1,0 +1,36 @@
+= form_for @user_detail do |f|
+  -if @user_detail.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@user_detail.errors.count, "error")} prohibited this user_detail from being saved:"
+      %ul
+        - @user_detail.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.hidden_field :user_id
+  .field
+    = f.hidden_field :address_list_id
+  .field
+    / = f.label :phone_list_id
+    = f.hidden_field :phone_list_id
+  .field
+    = f.label :first_name, 'First Name'
+    = f.text_area :first_name
+  .field
+    = f.label :middle_name, 'Middle Name'
+    = f.text_area :middle_name
+  .field
+    = f.label :last_name, 'Last Name'
+    = f.text_area :last_name
+  .field
+    = f.label :alt_email, 'Alternate E-Mail Address'
+    = f.text_area :alt_email
+  .field
+    = f.label :social, 'Social Security Number'
+    Format: 555-55-5555
+    = f.number_field :social
+  .field
+    = f.label :dob, 'Birthday'
+    = f.date_select :dob
+  .actions
+    = f.submit 'Save'
